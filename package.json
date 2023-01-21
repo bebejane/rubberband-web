@@ -32,19 +32,19 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist",
-    "public"
+    "dist"
   ],
   "scripts": {
     "dev": "concurrently \"npm:dev:worklet\" \"npm:dev:web\" \"npm:dev:example\"",
     "dev:worklet": "webpack --mode=development --watch",
     "dev:web": "tsc -b src/web/tsconfig.cjs.json src/web/tsconfig.esm.json src/web/tsconfig.esm5.json src/web/tsconfig.types.json --watch",
     "dev:example": "webpack  -c example/webpack.config.cjs --mode=development --watch",
-    "build": "npm run build:wasm && npm run build:worklet && npm run build:web && npm run build:example",
+    "build": "npm run build:wasm && npm run build:worklet && npm run build:web && npm run build:example && npm run build:public",
     "build:wasm": "cd wasm && bash ./build.sh",
     "build:worklet": "tsc -b src/worklet/tsconfig.json && webpack --mode=production",
     "build:web": "tsc -b src/web/tsconfig.cjs.json src/web/tsconfig.esm.json src/web/tsconfig.esm5.json src/web/tsconfig.types.json",
     "build:example": "webpack --mode=development -c example/webpack.config.cjs",
+    "build:public": "cp -R public ./dist/public",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "browser": {
