@@ -433,6 +433,6 @@ https://www.toptal.com/developers/gitignore/api/node,intellij+all,visualstudioco
 
 public
 build
-dist
+#dist
 pnpm-lock.yaml
 !wasm/build/rubberband.js
