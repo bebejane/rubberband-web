@@ -431,7 +431,7 @@ files,
 # End of
 https://www.toptal.com/developers/gitignore/api/node,intellij+all,visualstudiocode,c++,clion+all,phpstorm+all,yarn
 
-public
+#public
 build
 #dist
 pnpm-lock.yaml
