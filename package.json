@@ -32,7 +32,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "public"
   ],
   "scripts": {
     "dev": "concurrently \"npm:dev:worklet\" \"npm:dev:web\" \"npm:dev:example\"",
