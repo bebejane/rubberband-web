@@ -58,7 +58,7 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
           pitch: this.pitch,
           tempo: this.tempo
         })
-        console.info(`RubberBand engine version ${this._api.version}`)
+        console.info(`RealTimeRubberBand engine version ${this._api.version}`)
       }
     }
     return this._api
@@ -74,9 +74,6 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
     if (numChannels > 0) {
       const api = this.getApi(numChannels)
       if (api) {
-        if (inputs?.length > 0) {
-          api.push(inputs[0])
-        }
 
         if (outputs?.length > 0) {
           const outputLength = outputs[0][0].length
@@ -84,6 +81,10 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
             api.pull(outputs[0])
           }
         }
+        if (inputs?.length > 0) {
+          api.push(inputs[0])
+        }
+
       }
     }
     return this.running
