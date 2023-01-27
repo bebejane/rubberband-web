@@ -40,10 +40,11 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
         }
       }
     }
-    createModule()
-      .then((module: RubberBandModule) => {
-        this._module = module
-      })
+    createModule().then((module: RubberBandModule) => {
+      console.log('loaded module');
+
+      this._module = module
+    })
   }
 
   getApi(channelCount: number): RealtimeRubberBand | undefined {
