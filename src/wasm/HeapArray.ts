@@ -23,6 +23,7 @@ class HeapArray {
     // Allocate heap
     const channelByteSize = this.length * BYTES_PER_SAMPLE
     const dataByteSize = this.channelCount * channelByteSize
+    console.log('allocate heap', this.length, channelByteSize);
 
     this.dataPtr = this.module._malloc(dataByteSize)
     for (let channel = 0; channel < this.channelCount; ++channel) {
