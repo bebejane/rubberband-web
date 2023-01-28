@@ -42,8 +42,8 @@ class RealtimeRubberBand {
   size_t channel_count_;
   float **scratch_;
 
-  const size_t kBlockSize_ = 1024/4;
-  const size_t kReserve_ = 8192/4;
+  const size_t kBlockSize_ = 1024*4;
+  const size_t kReserve_ = 8192*4;
 };
 
 #endif //RUBBERBAND_WEB_SRC_REALTIME_RUBBERBAND_H_
