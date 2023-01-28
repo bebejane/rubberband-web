@@ -80,10 +80,9 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
 
         if (outputs?.length > 0) {
           const outputLength = outputs[0][0].length
-          if (api.samplesAvailable >= outputLength) {
-            api.pull(outputs[0])
-          } else
-            console.log('skip');
+          //if (api.samplesAvailable >= outputLength) {
+          api.pull(outputs[0])
+          //} else console.log('skip');
 
         }
       }
