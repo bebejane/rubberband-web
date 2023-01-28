@@ -2,7 +2,7 @@ import HeapArray from '../wasm/HeapArray'
 import { RealtimePitchShift } from './RealtimePitchShift'
 import { RubberBandModule, RealtimeRubberBand as RealtimeRubberBandKernel } from './RubberBandModule'
 
-const RENDER_QUANTUM_FRAMES = 128
+const RENDER_QUANTUM_FRAMES = 32
 
 interface RealtimeRubberBandOptions {
   highQuality?: boolean,
