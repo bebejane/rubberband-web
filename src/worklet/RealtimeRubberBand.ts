@@ -30,8 +30,10 @@ class RealtimeRubberBand implements RealtimePitchShift {
     this._kernel = new module.RealtimeRubberBand(sampleRate, this._channelCount, this._highQuality)
     this._inputArray = new HeapArray(module, RENDER_QUANTUM_FRAMES, channelCount)
     this._outputArray = new HeapArray(module, RENDER_QUANTUM_FRAMES, channelCount)
-    this._pitch = options?.pitch || 1
-    this._tempo = options?.tempo || 1
+    this._pitch = options?.pitch ?? 1.0
+    this._tempo = options?.tempo ?? 1.0
+    console.log(RENDER_QUANTUM_FRAMES);
+
   }
 
   get timeRatio(): number {
