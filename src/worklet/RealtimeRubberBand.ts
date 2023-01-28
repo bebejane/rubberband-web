@@ -60,7 +60,7 @@ class RealtimeRubberBand implements RealtimePitchShift {
       for (let channel = 0; channel < channelCount; ++channel) {
         this._inputArray.getChannelArray(channel).set(channels[channel])
       }
-      this._kernel.push(this._inputArray.getHeapAddress(), numSamples || RENDER_QUANTUM_FRAMES)
+      this._kernel.push(this._inputArray.getHeapAddress(), RENDER_QUANTUM_FRAMES)
     }
   }
 
