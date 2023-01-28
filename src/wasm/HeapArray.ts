@@ -21,7 +21,7 @@ class HeapArray {
     this.length = length
 
     // Allocate heap
-    const channelByteSize = this.length * BYTES_PER_SAMPLE
+    const channelByteSize = this.length// * BYTES_PER_SAMPLE
     const dataByteSize = this.channelCount * channelByteSize
     console.log('allocate heap', this.length, channelByteSize);
 
