@@ -70,7 +70,6 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
 
   process(inputs: Float32Array[][], outputs: Float32Array[][]): boolean {
     const numChannels = inputs[0]?.length || outputs[0]?.length
-    console.log('process', numChannels);
 
     if (numChannels > 0) {
       const api = this.getApi(numChannels)
@@ -81,9 +80,11 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
 
         if (outputs?.length > 0) {
           const outputLength = outputs[0][0].length
-          //if (api.samplesAvailable >= outputLength) {
-          api.pull(outputs[0])
-          //}
+          if (api.samplesAvailable >= outputLength) {
+            api.pull(outputs[0])
+          } else
+            console.log('skip');
+
         }
       }
     }
