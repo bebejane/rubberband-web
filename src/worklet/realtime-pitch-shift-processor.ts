@@ -16,7 +16,7 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
       const data = JSON.parse(e.data)
       const event = data[0] as string
       const payload = data[1]
-      console.log('port.onmessage', event, payload)
+      //console.log('port.onmessage', event, payload)
       switch (event) {
         case 'pitch': {
           this.pitch = payload
@@ -41,8 +41,6 @@ class RealtimePitchShiftProcessor extends AudioWorkletProcessor {
       }
     }
     createModule().then((module: RubberBandModule) => {
-      console.log('loaded module');
-
       this._module = module
     })
   }

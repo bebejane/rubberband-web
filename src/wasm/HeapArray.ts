@@ -21,9 +21,8 @@ class HeapArray {
     this.length = length
 
     // Allocate heap
-    const channelByteSize = this.length// * BYTES_PER_SAMPLE
+    const channelByteSize = this.length * BYTES_PER_SAMPLE
     const dataByteSize = this.channelCount * channelByteSize
-    console.log('allocate heap', this.length, channelByteSize);
 
     this.dataPtr = this.module._malloc(dataByteSize)
     for (let channel = 0; channel < this.channelCount; ++channel) {
@@ -34,7 +33,7 @@ class HeapArray {
           startByteOffset >> BYTES_PER_UNIT,
           endByteOffset >> BYTES_PER_UNIT)
     }
-    console.log(`[HeapArray] Created buffer at ${this.dataPtr} of size ${dataByteSize}, ending at ${this.dataPtr + dataByteSize}`)
+    //console.log(`[HeapArray] Created buffer at ${this.dataPtr} of size ${dataByteSize}, ending at ${this.dataPtr + dataByteSize}`)
     this.ready = true
   }
 
